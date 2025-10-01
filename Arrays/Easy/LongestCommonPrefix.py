@@ -36,3 +36,8 @@ class Solution:
         if strs[0] == "":
             return ""
         
+        
+        for i in range(len(strs[0])):
+            
+            
+        return strs[0]
