@@ -39,7 +39,21 @@ Analysis Of Algorithm
 My Question: Is there a way we can further optimize this code. 
              A way to loop only once ?
 
+New Idea:
+To loop once, we must compare the chars at i-th position for each string
+But the size of array is not predetermined. thus an additional for loop is needed
 
+What if we gather all the transpose the array
+(
+    Transpose means to arrange a 2d arrays such that the rows are now the colums and the columns are rows
+)
+
+Why transpose:
+    Take for example: strs = ["flower", "flow", "flight"]
+    strs_transpose = ["fff", "lll", "ooi" "wwg" ...]
+    We don't have to check create an inner loop if we compare each string in strs_transpose to (chars in each first_string of strs)*(length of strs)
+    while looping, have a place holder to be concatenating prefixes.
+    when nequality is found, end loop
 """
 
 
