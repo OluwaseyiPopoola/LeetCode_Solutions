@@ -39,5 +39,7 @@ class Solution:
         
         for i in range(len(strs[0])):
             
-            
+            for j in range(1, len(strs)):
+                
         return strs[0]
+
