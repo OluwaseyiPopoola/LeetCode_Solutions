@@ -27,6 +27,19 @@ Brute Force:
 -  Compare them to the chars of other elements at the same position
 -  When not equal to char at same positon or position not exist, first_string[:i]
 -  If loops finishes: return first_string
+
+Analysis Of Algorithm
+-  The function uses two nested for loops with different ranges: O(n*m)
+-  While one loops through the first string O(m), the other through the other strings: O(n - 1)
+
+    LeetCode Stats:
+    Runtime: 0ms        
+    Memory: 18.05MB     
+
+My Question: Is there a way we can further optimize this code. 
+             A way to loop only once ?
+
+
 """
 
 
@@ -44,3 +57,10 @@ class Solution:
                     return strs[0][:i]
         return strs[0]
 
+# def main():
+#     strs = input().split()
+#     soln = Solution()
+#     print(soln.longestCommonPrefix(strs))
+
+# if __name__ == "__main__":
+#     main()
