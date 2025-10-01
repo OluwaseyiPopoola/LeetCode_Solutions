@@ -62,8 +62,12 @@ class Solution:
     def longestCommonPrefix(self, strs: list[str]) -> str:
         if strs[0] == "":
             return ""
-    
 
+        for letter in list(zip(*strs)):
+
+           
+        return prefixes
+    
         
         
     
