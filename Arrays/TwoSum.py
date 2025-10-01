@@ -63,7 +63,9 @@ class Solution:
      
         target_inverses = {}
         for i in range(len(nums)):
-
+            if target - nums[i] in target_inverses:
+                return ([i, target_inverses[target- nums[i]]])
+            
             target_inverses[nums[i]] = i
             
 
