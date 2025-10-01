@@ -54,6 +54,24 @@ Why transpose:
     We don't have to check create an inner loop if we compare each string in strs_transpose to (chars in each first_string of strs)*(length of strs)
     while looping, have a place holder to be concatenating prefixes.
     when nequality is found, end loop
+
+Analysis Of Alogorithm
+-  zip(*strs) scans through each string once up to the shortest string’s length m.
+    So it produces about m tuples.
+    Each tuple has size n (one character from each of the n strings).
+    So creating zip(*strs) costs O(n·m).
+
+    Inside the loop:
+        For each letter tuple (size n), you check if all elements are the same:
+            letter == tuple(letter[0])*len(letter)
+        That comparison is O(n) (since it checks n characters).
+ 
+    Total_work = O(n⋅m) + O(n⋅m) = O(n⋅m)
+
+My thought: The first approach is probably better.
+
+My question: Is there a solution with O(n) solution
+             Can we loop hrough once?
 """
 
 
@@ -73,10 +91,10 @@ class Solution:
         return prefixes
            
 
-def main():
-    strs = input().split()
-    soln = Solution()
-    print(soln.longestCommonPrefix(strs))
+# def main():
+#     strs = input().split()
+#     soln = Solution()
+#     print(soln.longestCommonPrefix(strs))
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
