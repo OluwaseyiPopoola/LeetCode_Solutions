@@ -34,7 +34,23 @@ My question: Is there a way for me to reduce my time complexity to O(n) ?
 My answer: Probably since my TC: O(n**2) and AS: O(1)
 Maybe we can make them both O(n) ?
 
+New Idea:
+Aim: Optimize Soln to O(n)
+if x, y in nums and x + y == target:
+    return [nums.index(x), nums.index(y)]
+
+x + y = target -> x = target - y
+This means that if we keep track of all possible x until we find a match, We can change our TC to O(n): Loop once
+
+Problem:
+    Searching for num in target_inverses would be O(n) leading to a O(n**2)
+
+Solution:
+    If we store x and its index as key, val pairs, We can search in O(1) with the help of hashing
+
 """
+
+
 # def main():
 #     nums = list(map(int, input().split()))
 #     target = int(input())
