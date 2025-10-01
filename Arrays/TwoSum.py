@@ -48,6 +48,18 @@ Problem:
 Solution:
     If we store x and its index as key, val pairs, We can search in O(1) with the help of hashing
 
+Analysis Of Algorithm:
+    The function's TC has decreased from O(n**2) O(n) as we loop through nums once
+    The AC has increased from O(1) to O(n) as we make use of dictionary to keep track of possible matches
+
+    LeetCode Stats: ACCEPTED
+    Runtime: 0ms             Beats: 100.00%
+    Memory
+    18.90mb                  Beats: 51.02%
+
+My question: Is there another way to further optimixe this solution ?
+             To reduce the Space Complexity and Memory Used without Affecting the runtime ?
+        
 """
 
 
