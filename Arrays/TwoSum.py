@@ -51,25 +51,24 @@ Solution:
 """
 
 
-# def main():
-#     nums = list(map(int, input().split()))
-#     target = int(input())
-#     soln = Solution()
-#     print(soln.twoSum(nums, target))
+def main():
+    nums = list(map(int, input().split()))
+    target = int(input())
+    soln = Solution()
+    print(soln.twoSum(nums, target))
 
 
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
      
+        target_inverses = {}
         for i in range(len(nums)):
 
-
-
+            target_inverses[nums[i]] = i
             
 
-
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()
                 
 
                 
