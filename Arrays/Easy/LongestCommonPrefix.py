@@ -59,23 +59,24 @@ Why transpose:
 
 
 class Solution:
-    def longestCommonPrefix(self, strs: list[str]) -> str:
-        if strs[0] == "":
-            return ""
+    def longestCommonPrefix(self, strs) -> str:
+        prefixes = ""
 
         for letter in list(zip(*strs)):
 
-           
+            if letter == tuple(letter[0])*len(letter):
+                prefixes += (letter[0])
+                continue
+            
+            return prefixes
+        
         return prefixes
-    
-        
-        
-    
+           
 
-# def main():
-#     strs = input().split()
-#     soln = Solution()
-#     print(soln.longestCommonPrefix(strs))
+def main():
+    strs = input().split()
+    soln = Solution()
+    print(soln.longestCommonPrefix(strs))
 
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()
