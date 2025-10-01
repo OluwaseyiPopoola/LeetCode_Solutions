@@ -18,10 +18,21 @@ Brute Force:
 - Get each of their sum
 - if sum  == target:
       return indices of each num in pair
-  
 
-Minimum length of nums is 2
+Analysis of Algorithm:
+    The function has to nested for loops: O(n**2)
+    While one loops through the entire nums: the other loops through the remaining nums to get distinct combinations
+    
+    LeetCode Stats: ACCEPTED
 
+    Runtime: 1760ms    Beats: 23.37%
+
+    Memory
+    18.34mb            Beats: 87.06%
+
+My question: Is there a way for me to reduce my time complexity to O(n) ?
+My answer: Probably since my TC: O(n**2) and AS: O(1)
+Maybe we can make them both O(n) ?
 
 """
 # def main():
