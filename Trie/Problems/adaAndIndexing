@@ -1,0 +1,107 @@
+"""
+Ada the Ladybug has many things to do and almost no time. She wants to to save time while searching for something so she have decided to make a search engine.
+
+She has many words in her TODO list. It costs her precious time to find out, whether a word is in it so she seeks your help. You will get list and some queries. You will be asked, to find out how many words in TODO list have a word as prefix.
+
+Input
+The first line contains N, Q: the number words in TODO list and number of queries.
+
+N lines follow, with words (of TODO list) consisting of lowercase letters. The sum of their lengths won't be greater than 10**6
+
+Q lines follow, with words (queries) consisting of lowercase letters. The sum of their lengths won't be greater than 10**6
+
+Output
+For each query print the number of words in TODO list which have actual word as prefix.
+
+Example
+InputCopy	
+12 6
+bulldog
+dog
+dogged
+doggedly
+doggerel
+dogma
+dogmatic
+dogmatism
+dogs
+catastroph
+catastroph
+doctor
+cat
+dog
+dogg
+do
+doctrinography
+dogge
+
+OutputCopy
+2
+8
+3
+9
+0
+3
+"""
+
+
+
+def main():
+    n, q = list(map(int, input().split()))
+
+    vertex_children_letter = [[]]
+    vertex_count = [0]
+    vertex_children = [[-1]*26]
+    
+    words = []
+    for _ in range(n):
+        word = input()
+        words.append(word)
+
+    queries = []
+    for _ in range(q):
+        query = input()
+        queries.append(query)
+
+    for i in range(n):
+        r = 0
+        word = words[i]
+        for j in range(len(word)):
+            letter = word[j] 
+            iden = letterNum(letter)
+
+            if vertex_children[r][iden] == -1:
+                idenNode = len(vertex_count)
+                vertex_count.append(0)  
+                vertex_children.append([-1]*26)
+                vertex_children_letter.append([])
+                vertex_children_letter[r].append(letter)
+                vertex_children[r][iden] = idenNode
+
+            
+            vertex_count[vertex_children[r][iden]] += 1
+
+            r = vertex_children[r][iden]
+
+    for i in range(len(queries)):
+        r = 0
+        cnt = 0
+        for j in range(len(queries[i])):
+            iden = letterNum(queries[i][j])
+
+            if vertex_children[r][iden] == -1:
+                break
+
+            r = vertex_children[r][iden]
+
+            if j == len(queries[i]) - 1:
+                cnt = vertex_count[r]
+
+        print(cnt)
+    
+def letterNum(letter):
+    return ord(letter) - ord('a')
+
+
+if __name__ == "__main__":
+    main()
